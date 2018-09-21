@@ -119,7 +119,7 @@ NSLog(@"The largest digit is %i.", largest);
 }
 
 -(int) convertToBinary{ //only for positive integers.
-  int digPosition = 1; int binary; int temp = (int) [self absValue];
+  long int digPosition = 1; long int binary; int temp = (int) [self absValue];
 
   while(temp>0){
     binary += (temp % 2) * digPosition;
@@ -181,11 +181,11 @@ NSLog(@"The largest digit is %i.", largest);
     powTwo *= 2;
     ++power;
   }
-
-  if(number - pow(2,power) < pow(2,power + 1)- number){
-    return power;
+  //NSLog(@"%i,%i, %f,%f",power, power-1, number - pow(2,power-1), pow(2,power)- number );
+  if(number - pow(2,power-1) < pow(2,power)- number){
+    return power-1;
   }else{
-    return power + 1;
+    return power;
   }
 }
 
