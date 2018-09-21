@@ -5,65 +5,76 @@
 int main(int argc, const char * argv[]) {
 @autoreleasepool {
 
-NSLog(@"Starting  ksjdflkfj the main method");
+  NSLog(@"Starting the main method");
+  int newRound= 1;
 
-Number *myNumber = [[Number alloc] init];
-[myNumber setNumber: 334];
+  while (newRound == 1){
+    Number *myNumber = [[Number alloc] init];
+    int number;
 
-[myNumber print];
+    NSLog(@"What number would you like:");
+    scanf("%i", &number);
 
-NSLog(@"Its absolute value is %f.", [myNumber absValue]);
+    [myNumber setNumber: number];
 
-if([myNumber isEven]==1){
-  NSLog(@"It is neither even nor odd.");
-}
-if([myNumber isEven]==2){
-  NSLog(@"It is is even.");
-}
-if([myNumber isEven]==3){
-  NSLog(@"It is odd.");
-}
+    [myNumber print];
 
-if([myNumber isPrime]){
-  NSLog(@"It is prime.");
-}else{
-  NSLog(@"It is not prime.");
-}
+    NSLog(@"Its absolute value is %f.", [myNumber absValue]);
 
-NSLog(@"It has %i digits.", [myNumber countDigits]);
+    if([myNumber isEven]==1){
+      NSLog(@"It is neither even nor odd.");
+    }
+    if([myNumber isEven]==2){
+      NSLog(@"It is is even.");
+    }
+    if([myNumber isEven]==3){
+      NSLog(@"It is odd.");
+    }
 
-[myNumber largestD];
+    if([myNumber isPrime]){
+      NSLog(@"It is prime.");
+    }else{
+      NSLog(@"It is not prime.");
+    }
 
-[myNumber expressAsFraction];
+    NSLog(@"It has %i digits.", [myNumber countDigits]);
 
-if ([myNumber isPerfectSquare]){
-NSLog(@"It is a perfect square.");
-}else{
-  NSLog(@"It is not a perfect square.");
-}
+    [myNumber largestD];
 
-NSLog(@"Its nearest perfect square is %i.", [myNumber nearestPerfectSquare]);
+    [myNumber expressAsFraction];
 
-int power2=[myNumber nearestPowerOfTwo];
-NSLog(@"It nearest power of 2 (>=0) is 2^%i = %f ", power2, pow(2,power2));
+    if ([myNumber isPerfectSquare]){
+    NSLog(@"It is a perfect square.");
+    }else{
+      NSLog(@"It is not a perfect square.");
+    }
 
-int i = [myNumber convertToBinary];
-if(i == -1){
-  NSLog(@"It is too large to caculate the binary form.");
-}else{
-NSLog(@"The binary form of its absolute value without decimals is %i",i );
-}
+    NSLog(@"Its nearest perfect square is %i.", [myNumber nearestPerfectSquare]);
 
-if([myNumber isPalindrome]){
-  NSLog(@"It is a palindrome.");
-}else{
-  NSLog(@"It is not a palindrome.");
-}
+    int power2=[myNumber nearestPowerOfTwo];
+    NSLog(@"It nearest power of 2 (>=0) is 2^%i = %f ", power2, pow(2,power2));
 
-if([myNumber isFibonacci]){
-  NSLog(@"It is a fibonacci number.");
-}else{
-  NSLog(@"It is not a fibonacci number.");
+    int i = [myNumber convertToBinary];
+    if(i == -1){
+      NSLog(@"It is too large to caculate the binary form.");
+    }else{
+    NSLog(@"The binary form of its absolute value without decimals is %i",i );
+    }
+
+    if([myNumber isPalindrome]){
+      NSLog(@"It is a palindrome.");
+    }else{
+      NSLog(@"It is not a palindrome.");
+    }
+
+    if([myNumber isFibonacci]){
+      NSLog(@"It is a fibonacci number.");
+    }else{
+      NSLog(@"It is not a fibonacci number.");
+    }
+
+  NSLog(@"Would you like to check a new number? (enter 1 for yes, 0 for no)");
+  scanf("%i", &newRound);
 }
 
 }
